@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Reflection;
 
 namespace DungeonAndCharacters.API
 {
@@ -16,6 +19,20 @@ namespace DungeonAndCharacters.API
         public static string GetName(this Enum @enum)
         {
             return Enum.GetName(@enum.GetType(), @enum);
+        }
+
+        /// <summary>
+        /// Returns the value bound through <see cref="ValueAttribute"/> of the given enum.
+        /// </summary>
+        /// <param name="enum">The given enum</param>
+        /// <typeparam name="T">The type the bound value gets casted to</typeparam>
+        /// <returns>The value retrieved from the enum</returns>
+        public static T GetValue<T>(this Enum @enum)
+        {
+            Type type = @enum.GetType();
+            MemberInfo[] memInfo = type.GetMember(@enum.ToString());
+            ValueAttribute attribute = memInfo[0].GetCustomAttribute<ValueAttribute>();
+            return attribute == null ? default : attribute.As<T>();
         }
 
         /// <summary>
