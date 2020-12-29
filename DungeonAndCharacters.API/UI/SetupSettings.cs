@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DungeonAndCharacters.API.UI.Controls;
+using DungeonAndCharacters.API.UI.Table;
 
 namespace DungeonAndCharacters.API.UI
 {
@@ -29,12 +30,18 @@ namespace DungeonAndCharacters.API.UI
         public Color Color => _color;
 
         /// <summary>
+        /// Whether the new cell is a header cell or not. Only working for <see cref="ITableCell"/>
+        /// </summary>
+        public bool IsHeaderCell => _isHeader;
+
+        /// <summary>
         /// The items of this settings instance.
         /// </summary>
         public List<string> Items => _items;
 
         private List<string> _items = new List<string>();
         private string _label, _text;
+        private bool _isHeader;
         private Color _color = Color.Primary;
 
         /// <summary>
@@ -45,6 +52,17 @@ namespace DungeonAndCharacters.API.UI
         public SetupSettings AddClasses(params string[] classes)
         {
             Classes.AddRange(classes);
+            return this;
+        }
+
+        /// <summary>
+        /// Sets this cell - only works for <see cref="ITableCell"/> - as a header cell.
+        /// </summary>
+        /// <param name="isHeaderCell">Whether the cell should be a header cell</param>
+        /// <returns>This instance of setup settings</returns>
+        public SetupSettings SetHeaderCell(bool isHeaderCell)
+        {
+            _isHeader = isHeaderCell;
             return this;
         }
 

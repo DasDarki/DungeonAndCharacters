@@ -91,6 +91,9 @@
     <Compile Include="UI\RuntimeInterface.cs" />
     <Compile Include="UI\Sidebar\SidebarGroup.cs" />
     <Compile Include="UI\Sidebar\SidebarItem.cs" />
+    <Compile Include="UI\Table\Table.cs" />
+    <Compile Include="UI\Table\TableCell.cs" />
+    <Compile Include="UI\Table\TableRow.cs" />
     <Compile Include="UI\Window.cs" />
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -125,7 +128,6 @@
       <Name>DungeonAndCharacters.API</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="html\bulma.css">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

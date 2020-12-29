@@ -1,4 +1,7 @@
-﻿namespace DungeonAndCharacters.API.Model
+﻿using System.Collections.Generic;
+using DungeonAndCharacters.API.Traits;
+
+namespace DungeonAndCharacters.API.Model
 {
     /// <summary>
     /// The class describes what the character can do
@@ -21,5 +24,10 @@
         /// </summary>
         public int Level { get; set; }
         
+        /// <summary>
+        /// A list containing all traits coming with this class.
+        /// </summary>
+        public List<Trait> Traits { get; set; } = new List<Trait>();
+         
     }
 }

@@ -1,4 +1,7 @@
-﻿namespace DungeonAndCharacters.API.Model
+﻿using System.Collections.Generic;
+using DungeonAndCharacters.API.Traits;
+
+namespace DungeonAndCharacters.API.Model
 {
     /// <summary>
     /// The race describes on the one hand the appearance, as well as the general customs of a <see cref="Character"/>,
@@ -15,5 +18,10 @@
         /// The description of the race.
         /// </summary>
         public string Description { get; set; }
+        
+        /// <summary>
+        /// A list containing all traits coming with this race.
+        /// </summary>
+        public List<Trait> Traits { get; set; } = new List<Trait>();
     }
 }

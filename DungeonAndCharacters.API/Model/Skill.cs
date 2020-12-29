@@ -25,5 +25,14 @@
         /// or not.
         /// </summary>
         public bool IsProficiency { get; set; }
+        
+#pragma warning disable 1591
+        public Skill() {}
+        public Skill(string name, string description = "")
+#pragma warning restore 1591
+        {
+            Name = name;
+            Description = description;
+        }
     }
 }

@@ -4,9 +4,11 @@ using DungeonAndCharacters.API.UI;
 using DungeonAndCharacters.API.UI.Controls;
 using DungeonAndCharacters.API.UI.Layout;
 using DungeonAndCharacters.API.UI.Sidebar;
+using DungeonAndCharacters.API.UI.Table;
 using DungeonAndCharacters.UI.Controls;
 using DungeonAndCharacters.UI.Layout;
 using DungeonAndCharacters.UI.Sidebar;
+using DungeonAndCharacters.UI.Table;
 
 namespace DungeonAndCharacters.UI
 {
@@ -78,6 +80,21 @@ namespace DungeonAndCharacters.UI
             if (type == typeof(ISidebarItem))
             {
                 return new SidebarItem(parent, id, settings);
+            }
+
+            if (type == typeof(ITable))
+            {
+                return new Table.Table(parent, id, settings);
+            }
+
+            if (type == typeof(ITableCell))
+            {
+                return new TableCell(parent, id, settings);
+            }
+
+            if (type == typeof(ITableRow))
+            {
+                return new TableRow(parent, id, settings);
             }
 
             return default;

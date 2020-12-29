@@ -50,7 +50,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Converters\TraitActionConverter.cs" />
+    <Compile Include="Dice.cs" />
     <Compile Include="Extensions.cs" />
+    <Compile Include="Model\Attack.cs" />
     <Compile Include="Model\Character.cs" />
     <Compile Include="Model\Characteristics\Alignment.cs" />
     <Compile Include="Model\Characteristics\Background.cs" />
@@ -58,6 +61,11 @@
     <Compile Include="Model\Race.cs" />
     <Compile Include="Model\Skill.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Traits\ActionRegistry.cs" />
+    <Compile Include="Traits\Actions\TraitAction.cs" />
+    <Compile Include="Traits\ActionType.cs" />
+    <Compile Include="Traits\Trait.cs" />
+    <Compile Include="Traits\ITraitAction.cs" />
     <Compile Include="UI\Color.cs" />
     <Compile Include="UI\ContainerType.cs" />
     <Compile Include="UI\Controls\IButton.cs" />
@@ -79,6 +87,9 @@
     <Compile Include="UI\SetupSettings.cs" />
     <Compile Include="UI\Sidebar\ISidebarGroup.cs" />
     <Compile Include="UI\Sidebar\ISidebarItem.cs" />
+    <Compile Include="UI\Table\ITable.cs" />
+    <Compile Include="UI\Table\ITableCell.cs" />
+    <Compile Include="UI\Table\ITableRow.cs" />
     <Compile Include="ValueAttribute.cs" />
   </ItemGroup>
   <ItemGroup>
